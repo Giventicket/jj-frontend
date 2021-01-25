@@ -5,18 +5,15 @@ import BlogPanel from "../components/blogpanel/BlogPanel";
 import ContactUsPanel from "../components/contactuspanel/ContactUsPanel";
 import Footer from "../components/Footer";
 import testImage from "../public/testImage.jpg";
-import styled from "styled-components";
+import LoadableImage from "../components/LoadableImage";
 
-const StyledImage = styled.img`
-  display: block;
-  width: 100%;
-`;
+const LoadableImageStyle = { display: "block", width: "100%" };
 
 const MainPage = () => {
   return (
     <>
       <Header />
-      <StyledImage src={testImage} />
+      <LoadableImage src={testImage} style={LoadableImageStyle} />
       <AboutUsPanel />
       <BlogPanel />
       <ContactUsPanel />

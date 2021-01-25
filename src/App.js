@@ -6,7 +6,7 @@ const MainPage = loadable(() => import("./pages/MainPage"));
 const App = () => {
   return (
     <>
-      <Route path="/" component={MainPage} />
+      <Route path="/" render={() => <MainPage />} />
     </>
   );
 };
