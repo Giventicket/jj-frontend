@@ -1,5 +1,5 @@
 import React from "react";
-import TextLink from "../TextLink";
+import TextLink from "../common/TextLink";
 import { Grid, Box } from "@material-ui/core";
 
 const headerHeight = "10rem";

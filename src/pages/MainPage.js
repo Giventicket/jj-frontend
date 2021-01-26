@@ -5,7 +5,7 @@ import BlogPanel from "../components/blogpanel/BlogPanel";
 import ContactUsPanel from "../components/contactuspanel/ContactUsPanel";
 import Footer from "../components/Footer";
 import testImage from "../public/testImage.jpg";
-import LoadableImage from "../components/LoadableImage";
+import LoadableImage from "../components/common/LoadableImage";
 
 const LoadableImageStyle = { display: "block", width: "100%" };
 
