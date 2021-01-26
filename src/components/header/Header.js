@@ -36,8 +36,8 @@ const Header = () => {
           <TextLink to="/blog" style={TextLinkStyle}>
             Blog
           </TextLink>
-          <TextLink to="/contactus" style={TextLinkStyle}>
-            Contact Us
+          <TextLink to="/contact" style={TextLinkStyle}>
+            Contact
           </TextLink>
         </Grid>
       </Grid>

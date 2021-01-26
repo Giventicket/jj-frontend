@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Box } from "@material-ui/core";
+import PanelLabel from "../common/PanelLabel";
 
 const PanelHeight = "10rem";
 
@@ -17,6 +18,7 @@ const GridRootStyle = {
 const AboutUsPanel = () => {
   return (
     <Box height={PanelHeight} style={BoxStyle}>
+      <PanelLabel>About Us</PanelLabel>
       <Grid container style={GridRootStyle}>
         About Us Panel
       </Grid>
