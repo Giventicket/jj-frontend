@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import users, { usersSaga } from "./users";
+import posts, { postsSaga } from "./posts";
 import { all } from "redux-saga/effects";
 
 export function* rootSaga() {
-  yield all([usersSaga()]);
+  yield all([postsSaga()]);
 }
 
-const rootReducer = combineReducers({ users });
+const rootReducer = combineReducers({ posts });
 export default rootReducer;

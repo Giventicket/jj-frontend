@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/header/Header";
 import AboutUsPanel from "../components/aboutuspanel/AboutUsPanel";
-import BlogPanel from "../components/blogpanel/BlogPanel";
+import BlogPanelContainer from "../containers/BlogPanelContainer";
 import ContactUsPanel from "../components/contactuspanel/ContactUsPanel";
 import Footer from "../components/Footer";
 import testImage from "../public/testImage.jpg";
@@ -15,7 +15,7 @@ const MainPage = () => {
       <Header />
       <LoadableImage src={testImage} style={LoadableImageStyle} />
       <AboutUsPanel />
-      <BlogPanel />
+      <BlogPanelContainer />
       <ContactUsPanel />
       <Footer />
     </>

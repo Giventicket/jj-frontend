@@ -1,7 +1,7 @@
 import React from "react";
 
 const labelDivStyle = {
-  fontSize: "3rem",
+  fontSize: "1rem",
   textAlign: "center",
   padding: "1rem",
 };

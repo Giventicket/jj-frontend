@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 import rootReducer, { rootSaga } from "./modules";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 import { loadableReady } from "@loadable/component";
 const sagaMiddleware = createSagaMiddleware();
@@ -16,7 +17,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
   window.__PRELOADED_STATE__,
-  applyMiddleware(thunk, sagaMiddleware)
+  composeWithDevTools(applyMiddleware(thunk, sagaMiddleware))
 );
 
 sagaMiddleware.run(rootSaga);

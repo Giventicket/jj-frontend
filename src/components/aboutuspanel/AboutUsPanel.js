@@ -19,9 +19,7 @@ const AboutUsPanel = () => {
   return (
     <Box height={PanelHeight} style={BoxStyle}>
       <PanelLabel>About Us</PanelLabel>
-      <Grid container style={GridRootStyle}>
-        About Us Panel
-      </Grid>
+      <Grid container style={GridRootStyle}></Grid>
     </Box>
   );
 };

@@ -12,7 +12,7 @@ const ContainerGridStyle = {
   margin: "0 auto",
 };
 
-const BlogPanel = () => {
+const BlogPanel = ({ posts }) => {
   return (
     <Box style={BoxStyle}>
       <PanelLabel>Blog</PanelLabel>
