@@ -41,27 +41,29 @@ const bodyDivStyle = {
   textAlign: "justify",
 };
 
-const BlogCard = ({ to = "/" }) => {
+const getCalendarInfo = publishedDate => {
+  let parts = publishedDate.split("-");
+  let calendarInfo = new Date(parts[0], parts[1] - 1, parts[2].slice(0, 2));
+  calendarInfo = calendarInfo.toString().split(" ");
+  return calendarInfo;
+};
+
+const BlogCard = ({ post, to = "/" }) => {
+  const calendarInfo = getCalendarInfo(post.publishedDate);
   return (
     <div style={CardStyle}>
       <ResponsiveImage src={testImage} ratio={9 / 16} />
       <div style={calendarDivStyle}>
-        <b>JAN</b>
+        <b>{calendarInfo[1]}</b>
         <hr style={{ margin: 0 }} />
-        <b>26</b>
+        <b>{calendarInfo[2]}</b>
       </div>
       <div style={contentDivStyle}>
         <TextLink style={titleTextLinkStyle} to={to}>
-          <b>Google inks pact for new 35-storey office</b>
+          <b>{post.title}</b>
         </TextLink>
         <hr />
-        <div style={bodyDivStyle}>
-          That dominion stars lights dominion divide years for fourth have don't
-          stars is that he earth it first without heaven in place seed it second
-          morning saying. That dominion stars lights dominion divide years for
-          fourth have don't stars is that he earth it first without heaven in
-          place seed it second morning saying.
-        </div>
+        <div style={bodyDivStyle}>{post.body}</div>
       </div>
     </div>
   );

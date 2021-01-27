@@ -17,18 +17,11 @@ const BlogPanel = ({ posts }) => {
     <Box style={BoxStyle}>
       <PanelLabel>Blog</PanelLabel>
       <Grid container style={ContainerGridStyle} spacing={2}>
-        <Grid item md={12} lg={6}>
-          <BlogCard />
-        </Grid>
-        <Grid item md={12} lg={6}>
-          <BlogCard />
-        </Grid>
-        <Grid item md={12} lg={6}>
-          <BlogCard />
-        </Grid>
-        <Grid item md={12} lg={6}>
-          <BlogCard />
-        </Grid>
+        {posts.map(element => (
+          <Grid item md={12} lg={6} key={element._id}>
+            <BlogCard post={element} />
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );

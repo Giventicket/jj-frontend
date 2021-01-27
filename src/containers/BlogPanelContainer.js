@@ -16,7 +16,7 @@ const BlogPanelContainer = () => {
     dispatch(getPosts());
   }, [dispatch, posts]);
 
-  if (!posts) return <div>loading</div>;
+  if (!posts) return null;
   return <BlogPanel posts={posts} />;
 };
 
