@@ -15,7 +15,9 @@ const ContainerGridStyle = {
 const BlogPanel = ({ posts }) => {
   return (
     <Box style={BoxStyle}>
-      <PanelLabel>Blog</PanelLabel>
+      <Box width="80%" ml="10%" mr="10%">
+        <PanelLabel>Blog</PanelLabel>
+      </Box>
       <Grid container style={ContainerGridStyle} spacing={2}>
         {posts.map(element => (
           <Grid item md={12} lg={6} key={element._id}>

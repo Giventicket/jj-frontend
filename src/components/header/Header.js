@@ -14,7 +14,6 @@ const GridRootStyle = {
   margin: "0 auto",
 };
 const GridLeftStyle = { paddingLeft: "0.75rem" };
-const GridRightStyle = { textAlign: "end" };
 const TextLinkStyle = {
   padding: "0.375rem 0.75rem",
 };
@@ -23,20 +22,20 @@ const Header = () => {
   return (
     <Box height={headerHeight} style={BoxStyle}>
       <Grid container style={GridRootStyle}>
-        <Grid item xs style={GridLeftStyle}>
+        <Grid item xs={4} style={GridLeftStyle}>
           J&J
         </Grid>
-        <Grid item xs style={GridRightStyle}>
-          <TextLink to="/" style={TextLinkStyle}>
+        <Grid item container xs={8} justify="flex-end">
+          <TextLink to="/" style={TextLinkStyle} header>
             Home
           </TextLink>
-          <TextLink to="/about" style={TextLinkStyle}>
+          <TextLink to="/about" style={TextLinkStyle} header>
             About
           </TextLink>
-          <TextLink to="/blog" style={TextLinkStyle}>
+          <TextLink to="/blog" style={TextLinkStyle} header>
             Blog
           </TextLink>
-          <TextLink to="/contact" style={TextLinkStyle}>
+          <TextLink to="/contact" style={TextLinkStyle} header>
             Contact
           </TextLink>
         </Grid>

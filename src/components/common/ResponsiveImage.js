@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import LoadableImage from "./LoadableImage";
 
 //ratio = hieght/width
 const ResponsiveImage = ({ src, ratio = 3 / 4 }) => {
-  const divWrapperStyle = {
+  const [hover, setHover] = useState(false);
+
+  const DivWrapperStyle = {
     width: "100%",
     display: "relative",
     paddingTop: `${ratio * 100}%`,
@@ -12,7 +14,7 @@ const ResponsiveImage = ({ src, ratio = 3 / 4 }) => {
     height: 0,
   };
 
-  const divStyle = {
+  const DivStyle = {
     position: "absolute",
     top: 0,
     bottom: 0,
@@ -27,8 +29,8 @@ const ResponsiveImage = ({ src, ratio = 3 / 4 }) => {
   };
 
   return (
-    <div style={divWrapperStyle}>
-      <div style={divStyle}>
+    <div style={DivWrapperStyle}>
+      <div style={DivStyle}>
         <LoadableImage src={src} style={LoadableImageStyle} />
       </div>
     </div>

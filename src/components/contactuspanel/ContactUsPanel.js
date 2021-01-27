@@ -17,7 +17,9 @@ const GridRootStyle = {
 const ContactUsPanel = () => {
   return (
     <Box height={PanelHeight} style={BoxStyle}>
-      <PanelLabel>Contact Us</PanelLabel>
+      <Box width="80%" ml="10%" mr="10%">
+        <PanelLabel>Contact us</PanelLabel>
+      </Box>
       <Grid container style={GridRootStyle}></Grid>
     </Box>
   );
