@@ -1,35 +1,38 @@
 import React from "react";
 import AddIcon from "@material-ui/icons/Add";
-import IconButton from "@material-ui/core/IconButton";
+import { Button } from "@material-ui/core";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { grey } from "@material-ui/core/colors";
+
+const greyTheme = createMuiTheme({ palette: { primary: grey } });
 
 const labelDivStyle = {
-  fontSize: "1rem",
+  fontSize: "2rem",
   textAlign: "center",
   padding: "1rem",
+  lineHeight: "4rem",
 };
 
-const PanelLabel = ({ children, to = "/" }) => {
+const buttonDivStyle = {
+  position: "absolute",
+  right: 0,
+  top: 0,
+  bottom: 0,
+  paddingTop: "1rem",
+};
+
+const PanelLabel = ({ children, to = "/", plusButton = false }) => {
   return (
     <div style={{ position: "relative" }}>
-      <div
-        style={{
-          position: "absolute",
-          right: 0,
-          top: 0,
-          bottom: 0,
-          paddingTop: "0.5rem",
-        }}
-      >
-        <IconButton
-          color="secondary"
-          aria-label="show more"
-          component="div"
-          size="small"
-          href={to}
-        >
-          <AddIcon />
-        </IconButton>
-      </div>
+      {plusButton && (
+        <div style={buttonDivStyle}>
+          <MuiThemeProvider theme={greyTheme}>
+            <Button href={to}>
+              <AddIcon />
+            </Button>
+          </MuiThemeProvider>
+        </div>
+      )}
       <div style={labelDivStyle}>{children}</div>
     </div>
   );

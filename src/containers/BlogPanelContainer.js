@@ -4,7 +4,7 @@ import BlogPanel from "../components/blogpanel/BlogPanel";
 import { usePreloader } from "../lib/PreloaderContext";
 import { getPosts } from "../modules/posts";
 
-const BlogPanelContainer = () => {
+const BlogPanelContainer = ({ plusButton = false, navigator = false }) => {
   const posts = useSelector(state => state.posts.posts);
   const dispatch = useDispatch();
 
@@ -17,7 +17,14 @@ const BlogPanelContainer = () => {
   }, [dispatch, posts]);
 
   if (!posts) return null;
-  return <BlogPanel posts={posts} />;
+  return (
+    <BlogPanel
+      posts={posts}
+      plusButton={plusButton}
+      navigator={navigator}
+      to="/blog"
+    />
+  );
 };
 
 export default BlogPanelContainer;

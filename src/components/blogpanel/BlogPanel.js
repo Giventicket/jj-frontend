@@ -1,10 +1,12 @@
 import React from "react";
 import { Grid, Box } from "@material-ui/core";
 import BlogCard from "./BlogCard";
+import BlogNavigatorBox from "./BlogNavigatorBox";
 import PanelLabel from "../common/PanelLabel";
+import palette from "../../lib/Palette";
 
 const BoxStyle = {
-  backgroundColor: "#f3d9fa",
+  backgroundColor: palette.grey[3],
 };
 
 const ContainerGridStyle = {
@@ -12,11 +14,13 @@ const ContainerGridStyle = {
   margin: "0 auto",
 };
 
-const BlogPanel = ({ posts }) => {
+const BlogPanel = ({ to, posts, plusButton = false, navigator = false }) => {
   return (
     <Box style={BoxStyle}>
       <Box width="80%" ml="10%" mr="10%">
-        <PanelLabel>Blog</PanelLabel>
+        <PanelLabel plusButton={plusButton} to={to}>
+          Blog
+        </PanelLabel>
       </Box>
       <Grid container style={ContainerGridStyle} spacing={2}>
         {posts.map(element => (
@@ -25,6 +29,7 @@ const BlogPanel = ({ posts }) => {
           </Grid>
         ))}
       </Grid>
+      {navigator && <BlogNavigatorBox />}
     </Box>
   );
 };

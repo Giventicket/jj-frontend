@@ -2,23 +2,23 @@ import React from "react";
 import ResponsiveImage from "../common/ResponsiveImage";
 import TextLink from "../common/TextLink";
 import testImage from "../../public/testImage.jpg";
+import palette from "../../lib/Palette";
 
 const CardStyle = {
   display: "inline-block",
-  backgroundColor: "#f8f0fc",
   position: "relative",
   overflow: "hidden",
   width: "100%",
   borderRadius: "10px",
+  backgroundColor: "white",
 };
 
 const calendarDivStyle = {
   position: "absolute",
   top: "1rem",
   left: "1rem",
-  backgroundColor: "red",
-  opacity: 0.65,
-  color: "white",
+  backgroundColor: palette.grey[3],
+  opacity: 0.7,
   width: "5rem",
   height: "5rem",
   textAlign: "center",

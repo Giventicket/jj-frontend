@@ -15,7 +15,7 @@ const MainPage = () => {
       <Header />
       <LoadableImage src={testImage} style={LoadableImageStyle} />
       <AboutUsPanel />
-      <BlogPanelContainer />
+      <BlogPanelContainer plusButton={true} />
       <ContactUsPanel />
       <Footer />
     </>
