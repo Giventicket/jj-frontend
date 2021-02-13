@@ -1,5 +1,5 @@
 import React from "react";
-import TextLink from "../common/TextLink";
+import TextLink from "./common/TextLink";
 import { Grid } from "@material-ui/core";
 
 const headerHeight = "5rem";
@@ -21,10 +21,10 @@ const Header = () => {
         <TextLink to="/" header>
           Home
         </TextLink>
-        <TextLink to="/about" header>
+        <TextLink to="/aboutus" header>
           About
         </TextLink>
-        <TextLink to="/blog" header>
+        <TextLink to="/blog?page=1" header>
           Blog
         </TextLink>
         <TextLink to="/contact" header>

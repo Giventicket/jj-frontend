@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import { withRouter } from "react-router-dom";
 import palette from "../../lib/Palette";
+let url = require("url");
 
 const spanStyle = {
   color: palette.grey[9],
@@ -23,7 +23,9 @@ const hoverSpanStyle = {
 };
 
 const TextLink = ({ children, to, style, header = false, location }) => {
-  const pathname = location.pathname;
+  const pathname = location.pathname.split("/")[1];
+  var toUrl = url.parse(to);
+  const toPathname = toUrl.pathname.split("/")[1];
   const isMobile = useMediaQuery({ query: "(max-width : 960px)" });
   const [hover, setHover] = useState(false);
 
@@ -40,7 +42,7 @@ const TextLink = ({ children, to, style, header = false, location }) => {
 
   if (header)
     return (
-      <div style={pathname === to ? clickedDivStyle : DivStyle}>
+      <div style={pathname === toPathname ? clickedDivStyle : DivStyle}>
         <Link to={to}>
           <span
             style={hover ? hoverSpanStyleForHeader : spanStyle}

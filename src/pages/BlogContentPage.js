@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../components/Header";
-import BlogPanelContainer from "../containers/BlogPanelContainer";
+import BlogContentPanel from "../components/blogcontentpanel/BlogContentPanel";
 import Footer from "../components/Footer";
 
 const BlogPage = () => {
   return (
     <>
       <Header />
-      <BlogPanelContainer navigator={true} />
+      <BlogContentPanel />
       <Footer />
     </>
   );

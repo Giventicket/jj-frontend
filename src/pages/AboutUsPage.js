@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../components/Header";
-import BlogPanelContainer from "../containers/BlogPanelContainer";
+import AboutUsPanel from "../components/aboutuspanel/AboutUsPanel";
 import Footer from "../components/Footer";
 
-const BlogPage = () => {
+const AboutUsPage = () => {
   return (
     <>
       <Header />
-      <BlogPanelContainer navigator={true} />
+      <AboutUsPanel />
       <Footer />
     </>
   );
 };
 
-export default BlogPage;
+export default AboutUsPage;

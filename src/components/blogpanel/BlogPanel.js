@@ -6,13 +6,16 @@ import PanelLabel from "../common/PanelLabel";
 import palette from "../../lib/Palette";
 
 const BoxStyle = {
-  backgroundColor: palette.grey[3],
+  backgroundColor: palette.grey[2],
 };
 
-const ContainerGridStyle = {
-  width: "80%",
-  margin: "0 auto",
+const divStyle = {
+  textAlign: "center",
+  paddingTop: "1rem",
+  paddingBottom: "1rem",
 };
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const BlogPanel = ({ to, posts, plusButton = false, navigator = false }) => {
   return (
@@ -21,15 +24,27 @@ const BlogPanel = ({ to, posts, plusButton = false, navigator = false }) => {
         <PanelLabel plusButton={plusButton} to={to}>
           Blog
         </PanelLabel>
+        <Grid container spacing={2}>
+          {posts.map((element, index) => (
+            <Grid item md={12} lg={6} key={element._id}>
+              <BlogCard post={element} to={`blog/${element._id}`} />
+            </Grid>
+          ))}
+        </Grid>
+        <div style={divStyle}>
+          {navigator && (
+            <>
+              <BlogNavigatorBox>{"<<"}</BlogNavigatorBox>
+              {numbers.map(number => (
+                <BlogNavigatorBox key={number} to={`?page=${number}`}>
+                  {number}
+                </BlogNavigatorBox>
+              ))}
+              <BlogNavigatorBox>{">>"}</BlogNavigatorBox>
+            </>
+          )}
+        </div>
       </Box>
-      <Grid container style={ContainerGridStyle} spacing={2}>
-        {posts.map(element => (
-          <Grid item md={12} lg={6} key={element._id}>
-            <BlogCard post={element} />
-          </Grid>
-        ))}
-      </Grid>
-      {navigator && <BlogNavigatorBox />}
     </Box>
   );
 };

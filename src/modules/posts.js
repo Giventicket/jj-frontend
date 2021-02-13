@@ -68,7 +68,68 @@ const initialState = {
   },
 };
 
-function posts(state = initialState, action) {
+const dummyState = {
+  posts: [
+    {
+      _id: "6010a22cb579c11aaccc4fe1",
+      title: "포스트 #39",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu...",
+      publishedDate: "2021-01-26T23:13:48.795Z",
+      __v: 0,
+    },
+    {
+      _id: "6010a22cb579c11aaccc4fe0",
+      title: "포스트 #38",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu...",
+      publishedDate: "2021-01-26T23:13:48.794Z",
+      __v: 0,
+    },
+    {
+      _id: "6010a22cb579c11aaccc4fdf",
+      title: "포스트 #37",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu...",
+      publishedDate: "2021-01-26T23:13:48.794Z",
+      __v: 0,
+    },
+    {
+      _id: "6010a22cb579c11aaccc4fde",
+      title: "포스트 #36",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu...",
+      publishedDate: "2021-01-26T23:13:48.794Z",
+      __v: 0,
+    },
+    {
+      _id: "6010a22cb579c11aaccc4fdd",
+      title: "포스트 #35",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu...",
+      publishedDate: "2021-01-26T23:13:48.794Z",
+      __v: 0,
+    },
+  ],
+  post: {
+    _id: "6010a22cb579c11aaccc4fe1",
+    title: "포스트 #39",
+    body:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu...",
+    publishedDate: "2021-01-26T23:13:48.795Z",
+    __v: 0,
+  },
+  loading: {
+    posts: false,
+    post: false,
+  },
+  error: {
+    posts: null,
+    post: null,
+  },
+};
+
+function posts(state = dummyState, action) {
   switch (action.type) {
     case GET_POSTS:
       return {

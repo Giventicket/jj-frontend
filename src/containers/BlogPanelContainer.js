@@ -22,7 +22,7 @@ const BlogPanelContainer = ({ plusButton = false, navigator = false }) => {
       posts={posts}
       plusButton={plusButton}
       navigator={navigator}
-      to="/blog"
+      to="/blog?page=1"
     />
   );
 };
